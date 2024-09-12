@@ -12,7 +12,7 @@ public interface SegmentoRepository {
     CompletionStage<Segmento> add(Segmento segmento);
     CompletionStage<Stream<Segmento>> list();
     CompletionStage<Segmento> update(Segmento segmento);
-    CompletionStage<Boolean> delete(Long id);
+    CompletionStage<Segmento> delete(Long id);
 
 
 }

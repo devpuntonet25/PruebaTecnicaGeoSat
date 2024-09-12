@@ -77,16 +77,22 @@ package controllers {
       Call("PUT", _prefix + { _defaultPrefix } + "segmento/updateSegmento")
     }
   
+    // @LINE:17
+    def deleteSegmento(id:String): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "segmento/deleteSegmento/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
+    }
+  
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseCalzadaController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def addCalzada(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "calzada/add")

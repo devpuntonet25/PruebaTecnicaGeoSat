@@ -108,9 +108,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:17
+    def deleteSegmento: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SegmentoController.deleteSegmento",
+      """
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "segmento/deleteSegmento/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:19
+  // @LINE:20
   class ReverseCalzadaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -118,7 +128,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:19
+    // @LINE:20
     def addCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CalzadaController.addCalzada",
       """

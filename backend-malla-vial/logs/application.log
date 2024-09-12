@@ -32,3 +32,39 @@
 2024-09-12 16:41:37,579 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-24 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
 2024-09-12 16:41:37,639 [WARN] from org.hibernate.orm.connections.pooling in play-dev-mode-pekko.actor.default-dispatcher-24 - HHH10001002: Using built-in connection pool (not intended for production use)
 2024-09-12 16:41:37,704 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-24 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-12 17:29:04,716 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-10 - Shutting down connection pool.
+2024-09-12 17:29:04,775 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-31 - Registering exception handler: guice-provision-exception-handler
+2024-09-12 17:29:04,884 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-31 - Database [default] initialized
+2024-09-12 17:29:04,884 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-31 - Creating Pool for datasource 'default'
+2024-09-12 17:29:04,889 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-31 - datasource [default] bound to JNDI as DefaultDS
+2024-09-12 17:29:04,928 [INFO] from play.api.http.EnabledFilters in play-dev-mode-pekko.actor.default-dispatcher-31 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2024-09-12 17:29:04,936 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-31 - Application started (Dev) (no global state)
+2024-09-12 17:29:04,948 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+2024-09-12 17:29:04,948 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+2024-09-12 17:29:04,948 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+2024-09-12 17:29:04,948 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+2024-09-12 17:29:05,055 [WARN] from org.hibernate.orm.connections.pooling in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-09-12 17:29:05,123 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-31 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-12 17:52:53,544 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-10 - Shutting down connection pool.
+2024-09-12 17:52:53,601 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-39 - Registering exception handler: guice-provision-exception-handler
+2024-09-12 17:52:53,702 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-39 - Database [default] initialized
+2024-09-12 17:52:53,702 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-39 - Creating Pool for datasource 'default'
+2024-09-12 17:52:53,707 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-39 - datasource [default] bound to JNDI as DefaultDS
+2024-09-12 17:52:53,753 [INFO] from play.api.http.EnabledFilters in play-dev-mode-pekko.actor.default-dispatcher-39 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+
+    play.filters.csrf.CSRFFilter
+    play.filters.headers.SecurityHeadersFilter
+    play.filters.hosts.AllowedHostsFilter
+
+2024-09-12 17:52:53,760 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-39 - Application started (Dev) (no global state)
+2024-09-12 17:52:53,774 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+2024-09-12 17:52:53,774 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+2024-09-12 17:52:53,774 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+2024-09-12 17:52:53,774 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+2024-09-12 17:52:53,812 [WARN] from org.hibernate.orm.connections.pooling in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-09-12 17:52:53,887 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-39 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)

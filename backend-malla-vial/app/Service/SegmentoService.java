@@ -45,7 +45,7 @@ public class SegmentoService implements SegmentoRepository {
     }
 
     @Override
-    public CompletionStage<Boolean> delete(Long id) {
+    public CompletionStage<Segmento> delete(Long id) {
         return supplyAsync(() -> wrap(em -> deleteSegmento(em, id)), executionContext);
     }
 
@@ -77,13 +77,13 @@ public class SegmentoService implements SegmentoRepository {
         }
     }
 
-    private Boolean deleteSegmento(EntityManager em, Long id) {
+    private Segmento deleteSegmento(EntityManager em, Long id) {
         Segmento segmentoExistente = em.find(Segmento.class, id);
         if (segmentoExistente != null) {
             em.remove(segmentoExistente);
-            return true;
+            return segmentoExistente;
         } else {
-            return false;
+            return null;
         }
     }
 }

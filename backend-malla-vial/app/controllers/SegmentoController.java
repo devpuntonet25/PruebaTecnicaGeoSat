@@ -12,6 +12,7 @@ import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,7 @@ public class SegmentoController extends Controller {
         this.ec = ec;
     }
 
+    //Método para insertar
     public CompletionStage<Result> addSegmento(final Http.Request request) {
         //Primero miramos si el request se hizo enviando un json o enviando un formulario
         if(request.contentType().isPresent() && request.contentType().get().equals("application/json")) {
@@ -52,6 +54,7 @@ public class SegmentoController extends Controller {
         }
     }
 
+    //Método para obtener todos los registros
     public CompletionStage<Result> getSegmentos() {
         //Este método obtiene todos los segmentos como un stream, los parsea a una lista y luego a un JSON para poder retornarlo
         return segmentoService
@@ -59,6 +62,7 @@ public class SegmentoController extends Controller {
                 .thenApplyAsync(segmentoStream -> ok(Json.toJson(segmentoStream.collect(Collectors.toList()))), ec.current());
     }
 
+    //Método para actualizar
     public CompletionStage<Result> updateSegmento(final Http.Request request) {
         if(request.contentType().isPresent() && request.contentType().get().equals("application/json")) {
             JsonNode json = request.body().asJson();
@@ -77,4 +81,19 @@ public class SegmentoController extends Controller {
         }
     }
 
+    //Método para eliminar por id
+    public CompletionStage<Result> deleteSegmento(String id) {
+        try { //Validamos que si recibamos un número
+            Long idRecibido = Long.parseLong(id);
+            return segmentoService
+                    .delete(idRecibido)
+                    .thenApplyAsync(s -> ok(Json.toJson(s)), ec.current());
+        } catch (NumberFormatException e) { //Inmediatamente que se lanza la excepción retornamos el CompletionStage para mantener la asincronia
+            return CompletableFuture.completedFuture(badRequest("El id " + id + " enviado no es un número"));
+        } catch (Exception e) {
+            return CompletableFuture.completedFuture(
+                    internalServerError("Ocurrió un error inesperado al eliminar el segmento")
+            );
+        }
+    }
 }

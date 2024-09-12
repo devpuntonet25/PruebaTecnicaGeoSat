@@ -14,6 +14,7 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 POST    /segmento/add               controllers.SegmentoController.addSegmento(req: Request)
 GET     /segmento/getSegmentos      controllers.SegmentoController.getSegmentos()
 PUT     /segmento/updateSegmento    controllers.SegmentoController.updateSegmento(req: Request)
+DELETE  /segmento/deleteSegmento/:id    controllers.SegmentoController.deleteSegmento(id: String)
 
 # Calzada endpoints
 POST    /calzada/add                controllers.CalzadaController.addCalzada(req: Request)
