@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\conf\application.conf,C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\target\scala-2.13\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\conf\logback.xml,C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\target\scala-2.13\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\conf\routes,C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\target\scala-2.13\classes\routes)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\conf\META-INF\persistence.xml,C:\Users\User\Desktop\DigitalHouse\Prueba Tecnica\backend-malla-vial\target\scala-2.13\classes\META-INF\persistence.xml)[0m

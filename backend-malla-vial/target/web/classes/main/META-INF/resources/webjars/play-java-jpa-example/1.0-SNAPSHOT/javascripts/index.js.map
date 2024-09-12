@@ -1,0 +1,13 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "",
+  "sources": [
+    "index.coffee"
+  ],
+  "names": [],
+  "mappings": "AAAA;EAAA,CAAA,CAAE,QAAA,CAAA,CAAA;WACA,CAAC,CAAC,GAAF,CAAM,UAAN,EAAkB,QAAA,CAAC,OAAD,CAAA;aAChB,CAAC,CAAC,IAAF,CAAO,OAAP,EAAgB,QAAA,CAAC,KAAD,EAAQ,MAAR,CAAA;eACd,CAAA,CAAE,UAAF,CAAa,CAAC,MAAd,CAAqB,CAAA,CAAE,MAAF,CAAS,CAAC,IAAV,CAAe,MAAM,CAAC,IAAtB,CAArB;MADc,CAAhB;IADgB,CAAlB;EADA,CAAF;AAAA",
+  "sourcesContent": [
+    "$ ->\n  $.get \"/persons\", (persons) ->\n    $.each persons, (index, person) ->\n      $(\"#persons\").append $(\"<li>\").text person.name"
+  ]
+}
