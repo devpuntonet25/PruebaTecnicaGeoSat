@@ -19,7 +19,7 @@ class Routes(
   Assets_1: controllers.Assets,
   // @LINE:14
   SegmentoController_2: controllers.SegmentoController,
-  // @LINE:17
+  // @LINE:18
   CalzadaController_3: controllers.CalzadaController,
   val prefix: String
 ) extends GeneratedRouter {
@@ -32,7 +32,7 @@ class Routes(
     Assets_1: controllers.Assets,
     // @LINE:14
     SegmentoController_2: controllers.SegmentoController,
-    // @LINE:17
+    // @LINE:18
     CalzadaController_3: controllers.CalzadaController
   ) = this(errorHandler, PersonController_0, Assets_1, SegmentoController_2, CalzadaController_3, "/")
 
@@ -52,6 +52,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """persons""", """controllers.PersonController.getPersons()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """segmento/add""", """controllers.SegmentoController.addSegmento(req:Request)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """segmento/getSegmentos""", """controllers.SegmentoController.getSegmentos()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/add""", """controllers.CalzadaController.addCalzada(req:Request)"""),
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -156,11 +157,29 @@ class Routes(
     )
   )
 
-  // @LINE:17
-  private lazy val controllers_CalzadaController_addCalzada5_route = Route("POST",
+  // @LINE:15
+  private lazy val controllers_SegmentoController_getSegmentos5_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("segmento/getSegmentos")))
+  )
+  private lazy val controllers_SegmentoController_getSegmentos5_invoker = createInvoker(
+    SegmentoController_2.getSegmentos(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.SegmentoController",
+      "getSegmentos",
+      Nil,
+      "GET",
+      this.prefix + """segmento/getSegmentos""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:18
+  private lazy val controllers_CalzadaController_addCalzada6_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("calzada/add")))
   )
-  private lazy val controllers_CalzadaController_addCalzada5_invoker = createInvoker(
+  private lazy val controllers_CalzadaController_addCalzada6_invoker = createInvoker(
     
     (req:play.mvc.Http.Request) =>
       CalzadaController_3.addCalzada(fakeValue[play.mvc.Http.Request]),
@@ -212,10 +231,16 @@ class Routes(
           req => SegmentoController_2.addSegmento(req))
       }
   
-    // @LINE:17
-    case controllers_CalzadaController_addCalzada5_route(params@_) =>
+    // @LINE:15
+    case controllers_SegmentoController_getSegmentos5_route(params@_) =>
       call { 
-        controllers_CalzadaController_addCalzada5_invoker.call(
+        controllers_SegmentoController_getSegmentos5_invoker.call(SegmentoController_2.getSegmentos())
+      }
+  
+    // @LINE:18
+    case controllers_CalzadaController_addCalzada6_route(params@_) =>
+      call { 
+        controllers_CalzadaController_addCalzada6_invoker.call(
           req => CalzadaController_3.addCalzada(req))
       }
   }

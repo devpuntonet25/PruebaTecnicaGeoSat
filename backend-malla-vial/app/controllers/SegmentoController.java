@@ -13,6 +13,7 @@ import play.mvc.Result;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
 
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
@@ -49,6 +50,13 @@ public class SegmentoController extends Controller {
                     .add(segmento)
                     .thenApplyAsync(s -> ok(Json.toJson(s)), ec.current());
         }
+    }
+
+    public CompletionStage<Result> getSegmentos() {
+        //Este método obtiene todos los segmentos como un stream, los parsea a una lista y luego a un JSON para poder retornarlo
+        return segmentoService
+                .list()
+                .thenApplyAsync(segmentoStream -> ok(Json.toJson(segmentoStream.collect(Collectors.toList()))), ec.current());
     }
 
 }

@@ -12,6 +12,7 @@ GET     /assets/*file               controllers.Assets.at(path="/public", file)
 
 # Segmento endpoints
 POST    /segmento/add               controllers.SegmentoController.addSegmento(req: Request)
+GET     /segmento/getSegmentos      controllers.SegmentoController.getSegmentos()
 
 # Calzada endpoints
 POST    /calzada/add                controllers.CalzadaController.addCalzada(req: Request)
