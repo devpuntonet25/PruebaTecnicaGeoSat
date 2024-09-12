@@ -40,7 +40,7 @@ public class SegmentoController extends Controller {
             //Parseamos del json a la entidad
             Segmento segmento = Json.fromJson(json, Segmento.class);
 
-            //Retornamos la entidad
+            //Retornamos la entidad luego de guardarla
             return segmentoService
                     .add(segmento)
                     .thenApplyAsync(s -> ok(Json.toJson(s)), ec.current());
@@ -57,6 +57,24 @@ public class SegmentoController extends Controller {
         return segmentoService
                 .list()
                 .thenApplyAsync(segmentoStream -> ok(Json.toJson(segmentoStream.collect(Collectors.toList()))), ec.current());
+    }
+
+    public CompletionStage<Result> updateSegmento(final Http.Request request) {
+        if(request.contentType().isPresent() && request.contentType().get().equals("application/json")) {
+            JsonNode json = request.body().asJson();
+            if(json == null) {
+                return supplyAsync(() -> badRequest("No se pudo parsear el objeto JSON"), ec.current());
+            }
+            Segmento segmento = Json.fromJson(json, Segmento.class);
+            return segmentoService
+                    .update(segmento)
+                    .thenApplyAsync(s -> ok(Json.toJson(s)), ec.current());
+        } else {
+            Segmento segmento = formFactory.form(Segmento.class).bindFromRequest(request).get();
+            return segmentoService
+                    .update(segmento)
+                    .thenApplyAsync(s -> ok(Json.toJson(s)), ec.current());
+        }
     }
 
 }

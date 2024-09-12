@@ -98,9 +98,19 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:16
+    def updateSegmento: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SegmentoController.updateSegmento",
+      """
+        function() {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "segmento/updateSegmento"})
+        }
+      """
+    )
+  
   }
 
-  // @LINE:18
+  // @LINE:19
   class ReverseCalzadaController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -108,7 +118,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:18
+    // @LINE:19
     def addCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.CalzadaController.addCalzada",
       """

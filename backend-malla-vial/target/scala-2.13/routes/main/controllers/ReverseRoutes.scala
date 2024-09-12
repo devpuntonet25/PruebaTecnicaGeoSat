@@ -71,16 +71,22 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "segmento/getSegmentos")
     }
   
+    // @LINE:16
+    def updateSegmento(): Call = {
+      
+      Call("PUT", _prefix + { _defaultPrefix } + "segmento/updateSegmento")
+    }
+  
   }
 
-  // @LINE:18
+  // @LINE:19
   class ReverseCalzadaController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:18
+    // @LINE:19
     def addCalzada(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "calzada/add")
