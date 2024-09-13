@@ -98,6 +98,12 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "calzada/add")
     }
   
+    // @LINE:21
+    def getCalzadas(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "calzada/getCalzadas")
+    }
+  
   }
 
 

@@ -12,6 +12,7 @@ import play.mvc.Result;
 
 import javax.inject.Inject;
 import java.util.concurrent.CompletionStage;
+import java.util.stream.Collectors;
 
 import static java.util.concurrent.CompletableFuture.supplyAsync;
 
@@ -27,6 +28,7 @@ public class CalzadaController extends Controller {
         this.ec = ec;
     }
 
+    //Método para agregar
     public CompletionStage<Result> addCalzada(final Http.Request request) {
         //Hago esto para poder recibir tanto json como un formulario
         if(request.contentType().isPresent() && request.contentType().get().equals("application/json")) {
@@ -45,5 +47,12 @@ public class CalzadaController extends Controller {
                     .add(calzada)
                     .thenApplyAsync(c -> ok(Json.toJson(c)), ec.current());
         }
+    }
+
+    //Método para obtener todos los registros
+    public CompletionStage<Result> getCalzadas() {
+        return calzadaService
+                .list()
+                .thenApplyAsync(calzadaStream -> ok(Json.toJson(calzadaStream.collect(Collectors.toList()))), ec.current());
     }
 }

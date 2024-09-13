@@ -138,6 +138,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:21
+    def getCalzadas: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.getCalzadas",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/getCalzadas"})
+        }
+      """
+    )
+  
   }
 
 

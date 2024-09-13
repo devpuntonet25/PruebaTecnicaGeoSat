@@ -56,6 +56,7 @@ class Routes(
     ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """segmento/updateSegmento""", """controllers.SegmentoController.updateSegmento(req:Request)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """segmento/deleteSegmento/""" + "$" + """id<[^/]+>""", """controllers.SegmentoController.deleteSegmento(id:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/add""", """controllers.CalzadaController.addCalzada(req:Request)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/getCalzadas""", """controllers.CalzadaController.getCalzadas()"""),
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -235,6 +236,24 @@ class Routes(
     )
   )
 
+  // @LINE:21
+  private lazy val controllers_CalzadaController_getCalzadas9_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("calzada/getCalzadas")))
+  )
+  private lazy val controllers_CalzadaController_getCalzadas9_invoker = createInvoker(
+    CalzadaController_3.getCalzadas(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CalzadaController",
+      "getCalzadas",
+      Nil,
+      "GET",
+      this.prefix + """calzada/getCalzadas""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -295,6 +314,12 @@ class Routes(
       call { 
         controllers_CalzadaController_addCalzada8_invoker.call(
           req => CalzadaController_3.addCalzada(req))
+      }
+  
+    // @LINE:21
+    case controllers_CalzadaController_getCalzadas9_route(params@_) =>
+      call { 
+        controllers_CalzadaController_getCalzadas9_invoker.call(CalzadaController_3.getCalzadas())
       }
   }
 }
