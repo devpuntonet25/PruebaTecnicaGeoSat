@@ -55,4 +55,26 @@ public class CalzadaController extends Controller {
                 .list()
                 .thenApplyAsync(calzadaStream -> ok(Json.toJson(calzadaStream.collect(Collectors.toList()))), ec.current());
     }
+
+    //Método para actualizar
+    public CompletionStage<Result> updateCalzada(final Http.Request request) {
+        //Primero miramos si la información fue enviada como json o en un formulario
+        if(request.contentType().isPresent() && request.contentType().get().equals("application/json")) {
+            //Si esta condición se cumple es porque la info fue enviada en un json
+            JsonNode json = request.body().asJson();
+            if(json == null) {
+                return supplyAsync(() -> badRequest("No se puede parsear el objeto JSON"), ec.current());
+            }
+            Calzada calzada = Json.fromJson(json, Calzada.class);//Parseamos el json en una calzada
+            return calzadaService //llamamos el método en el servicio para actualizar la calzada
+                    .update(calzada)
+                    .thenApplyAsync(c -> ok(Json.toJson(c)), ec.current());
+        } else {//Si no se cumple la condición anterior es porque la información fue enviada mediante un formulario
+            Calzada calzada = formFactory.form(Calzada.class).bindFromRequest(request).get();
+            //llamamos el método en el servicio para actualizar la calzada
+            return calzadaService
+                    .update(calzada)
+                    .thenApplyAsync(c -> ok(Json.toJson(c)), ec.current());
+        }
+    }
 }

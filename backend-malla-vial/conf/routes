@@ -19,3 +19,4 @@ DELETE  /segmento/deleteSegmento/:id    controllers.SegmentoController.deleteSeg
 # Calzada endpoints
 POST    /calzada/add                controllers.CalzadaController.addCalzada(req: Request)
 GET     /calzada/getCalzadas        controllers.CalzadaController.getCalzadas()
+PUT     /calzada/updateCalzada      controllers.CalzadaController.updateCalzada(req: Request)

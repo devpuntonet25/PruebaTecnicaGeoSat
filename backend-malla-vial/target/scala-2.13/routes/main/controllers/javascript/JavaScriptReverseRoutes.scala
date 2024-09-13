@@ -148,6 +148,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:22
+    def updateCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.updateCalzada",
+      """
+        function() {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/updateCalzada"})
+        }
+      """
+    )
+  
   }
 
 

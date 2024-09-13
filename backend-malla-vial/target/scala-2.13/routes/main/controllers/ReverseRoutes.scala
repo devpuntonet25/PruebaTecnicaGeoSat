@@ -104,6 +104,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "calzada/getCalzadas")
     }
   
+    // @LINE:22
+    def updateCalzada(): Call = {
+      
+      Call("PUT", _prefix + { _defaultPrefix } + "calzada/updateCalzada")
+    }
+  
   }
 
 

@@ -37,6 +37,11 @@ public class CalzadaService implements CalzadaRepository {
         return supplyAsync(() -> wrap(em -> list(em)), executionContext);
     }
 
+    @Override
+    public CompletionStage<Calzada> update(Calzada calzada) {
+        return supplyAsync(() -> wrap(em -> updateCalzada(em, calzada)), executionContext);
+    }
+
     private <T> T wrap(Function<EntityManager, T> function) {
         return jpaApi.withTransaction(function);
     }
@@ -49,6 +54,18 @@ public class CalzadaService implements CalzadaRepository {
     private Stream<Calzada> list(EntityManager em) {
         List<Calzada> calzadas = em.createQuery("select c from Calzada c", Calzada.class).getResultList();
         return calzadas.stream();
+    }
+
+    private Calzada updateCalzada(EntityManager em, Calzada calzada) {
+        Calzada calzadaExistente = em.find(Calzada.class, calzada.getCodigo());
+        if(calzadaExistente != null) {
+            calzadaExistente.setLongitud(calzada.getLongitud());
+            calzadaExistente.setSegmento(calzada.getSegmento());
+
+           return em.merge(calzadaExistente);
+        } else {
+            return null;
+        }
     }
 
 }

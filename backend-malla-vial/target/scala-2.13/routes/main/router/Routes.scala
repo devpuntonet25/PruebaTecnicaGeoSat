@@ -57,6 +57,7 @@ class Routes(
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """segmento/deleteSegmento/""" + "$" + """id<[^/]+>""", """controllers.SegmentoController.deleteSegmento(id:String)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/add""", """controllers.CalzadaController.addCalzada(req:Request)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/getCalzadas""", """controllers.CalzadaController.getCalzadas()"""),
+    ("""PUT""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """calzada/updateCalzada""", """controllers.CalzadaController.updateCalzada(req:Request)"""),
     Nil
   ).foldLeft(Seq.empty[(String, String, String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String, String, String)]
@@ -254,6 +255,26 @@ class Routes(
     )
   )
 
+  // @LINE:22
+  private lazy val controllers_CalzadaController_updateCalzada10_route = Route("PUT",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("calzada/updateCalzada")))
+  )
+  private lazy val controllers_CalzadaController_updateCalzada10_invoker = createInvoker(
+    
+    (req:play.mvc.Http.Request) =>
+      CalzadaController_3.updateCalzada(fakeValue[play.mvc.Http.Request]),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.CalzadaController",
+      "updateCalzada",
+      Seq(classOf[play.mvc.Http.Request]),
+      "PUT",
+      this.prefix + """calzada/updateCalzada""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -320,6 +341,13 @@ class Routes(
     case controllers_CalzadaController_getCalzadas9_route(params@_) =>
       call { 
         controllers_CalzadaController_getCalzadas9_invoker.call(CalzadaController_3.getCalzadas())
+      }
+  
+    // @LINE:22
+    case controllers_CalzadaController_updateCalzada10_route(params@_) =>
+      call { 
+        controllers_CalzadaController_updateCalzada10_invoker.call(
+          req => CalzadaController_3.updateCalzada(req))
       }
   }
 }

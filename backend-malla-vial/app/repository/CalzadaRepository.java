@@ -11,4 +11,5 @@ import java.util.stream.Stream;
 public interface CalzadaRepository {
     CompletionStage<Calzada> add(Calzada calzada);
     CompletionStage<Stream<Calzada>> list();
+    CompletionStage<Calzada> update(Calzada calzada);
 }
