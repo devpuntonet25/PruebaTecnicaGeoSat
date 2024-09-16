@@ -11,6 +11,7 @@ import play.mvc.Http;
 import play.mvc.Result;
 
 import javax.inject.Inject;
+import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 import java.util.stream.Collectors;
 
@@ -75,6 +76,21 @@ public class CalzadaController extends Controller {
             return calzadaService
                     .update(calzada)
                     .thenApplyAsync(c -> ok(Json.toJson(c)), ec.current());
+        }
+    }
+    //Este método elimina
+    public CompletionStage<Result> deleteCalzada(String id) {
+        try {
+            Long idRecibido = Long.parseLong(id);
+            return calzadaService
+                    .delete(idRecibido)
+                    .thenApplyAsync(c -> ok(Json.toJson(c)), ec.current());
+        } catch (NumberFormatException nfe) {
+            return CompletableFuture.completedFuture(badRequest("El id " + id + " enviado no es un número"));
+        } catch (Exception e) {
+            return CompletableFuture.completedFuture(
+                    internalServerError("Ocurrió un error inesperado al eliminar la calzada")
+            );
         }
     }
 }

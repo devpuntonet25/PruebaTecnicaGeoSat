@@ -1,18 +1,23 @@
-2024-09-12 20:51:46,530 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-9 - Database [default] initialized
-2024-09-12 20:51:46,535 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-9 - Creating Pool for datasource 'default'
-2024-09-12 20:51:46,579 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-9 - datasource [default] bound to JNDI as DefaultDS
-2024-09-12 20:51:46,657 [INFO] from play.api.http.EnabledFilters in play-dev-mode-pekko.actor.default-dispatcher-9 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
+2024-09-15 13:12:17,949 [INFO] from play.api.db.DefaultDBApi in play-dev-mode-pekko.actor.default-dispatcher-10 - Database [default] initialized
+2024-09-15 13:12:17,955 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-10 - Creating Pool for datasource 'default'
+2024-09-15 13:12:18,000 [INFO] from play.api.db.HikariCPConnectionPool in play-dev-mode-pekko.actor.default-dispatcher-10 - datasource [default] bound to JNDI as DefaultDS
+2024-09-15 13:12:18,085 [INFO] from play.api.http.EnabledFilters in play-dev-mode-pekko.actor.default-dispatcher-10 - Enabled Filters (see <https://www.playframework.com/documentation/latest/Filters>):
 
     play.filters.csrf.CSRFFilter
     play.filters.headers.SecurityHeadersFilter
     play.filters.hosts.AllowedHostsFilter
 
-2024-09-12 20:51:46,706 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-9 - Application started (Dev) (no global state)
-2024-09-12 20:51:47,385 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
-2024-09-12 20:51:47,390 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
-2024-09-12 20:51:47,390 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
-2024-09-12 20:51:47,391 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
-2024-09-12 20:51:47,696 [WARN] from org.hibernate.orm.connections.pooling in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH10001002: Using built-in connection pool (not intended for production use)
-2024-09-12 20:51:47,792 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-9 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-09-12 21:19:12,073 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-16 - Shutting down connection pool.
-2024-09-12 21:19:12,158 [INFO] from play.api.http.HttpErrorHandlerExceptions in play-dev-mode-pekko.actor.default-dispatcher-19 - Registering exception handler: guice-provision-exception-handler
+2024-09-15 13:12:18,154 [INFO] from play.api.Play in play-dev-mode-pekko.actor.default-dispatcher-10 - Application started (Dev) (no global state)
+2024-09-15 13:12:18,692 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.user], use [jakarta.persistence.jdbc.user] instead
+2024-09-15 13:12:18,695 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.password], use [jakarta.persistence.jdbc.password] instead
+2024-09-15 13:12:18,696 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.url], use [jakarta.persistence.jdbc.url] instead
+2024-09-15 13:12:18,698 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH90000021: Encountered deprecated setting [javax.persistence.jdbc.driver], use [jakarta.persistence.jdbc.driver] instead
+2024-09-15 13:12:19,141 [WARN] from org.hibernate.orm.connections.pooling in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH10001002: Using built-in connection pool (not intended for production use)
+2024-09-15 13:12:19,251 [WARN] from org.hibernate.orm.deprecation in play-dev-mode-pekko.actor.default-dispatcher-10 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-09-15 20:09:33,332 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-default housekeeper - HikariPool-default - Thread starvation or clock leap detected (housekeeper delta=2h11m10s681ms345µs200ns).
+2024-09-15 20:23:55,265 [INFO] from play.api.internal.libs.concurrent.CoordinatedShutdownSupport in pool-7-thread-9 - Starting synchronous coordinated shutdown with ServerStoppedReason reason and 40000 milliseconds timeout
+2024-09-15 20:23:55,294 [INFO] from play.core.server.PekkoHttpServer in pool-7-thread-9 - Stopping Pekko HTTP server...
+2024-09-15 20:23:55,353 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-52 - Unbinding /[0:0:0:0:0:0:0:0]:9000
+2024-09-15 20:23:55,378 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-52 - Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
+2024-09-15 20:23:55,462 [INFO] from play.api.db.HikariCPConnectionPool in application-pekko.actor.internal-dispatcher-36 - Shutting down connection pool.
+2024-09-15 20:23:55,558 [INFO] from play.core.server.PekkoHttpServer in play-dev-mode-pekko.actor.internal-dispatcher-56 - Running provided shutdown stop hooks

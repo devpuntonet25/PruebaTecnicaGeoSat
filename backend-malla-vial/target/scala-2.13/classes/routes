@@ -20,3 +20,10 @@ DELETE  /segmento/deleteSegmento/:id    controllers.SegmentoController.deleteSeg
 POST    /calzada/add                controllers.CalzadaController.addCalzada(req: Request)
 GET     /calzada/getCalzadas        controllers.CalzadaController.getCalzadas()
 PUT     /calzada/updateCalzada      controllers.CalzadaController.updateCalzada(req: Request)
+DELETE  /calzada/deleteCalzada/:id      controllers.CalzadaController.deleteCalzada(id: String)
+
+# Bordillo endpoints
+POST    /bordillo/add               controllers.BordilloController.addBordillo(req: Request)
+GET     /bordillo/getBordillos      controllers.BordilloController.getBordillos()
+PUT     /bordillo/updateBordillo    controllers.BordilloController.updateBordillo(req: Request)
+DELETE  /bordillo/deleteBordillo/:id    controllers.BordilloController.deleteBordillo(id: String)

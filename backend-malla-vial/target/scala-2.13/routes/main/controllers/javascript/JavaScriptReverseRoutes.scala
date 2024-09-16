@@ -70,6 +70,56 @@ package controllers.javascript {
   
   }
 
+  // @LINE:20
+  class ReverseCalzadaController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:20
+    def addCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.addCalzada",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/add"})
+        }
+      """
+    )
+  
+    // @LINE:21
+    def getCalzadas: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.getCalzadas",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/getCalzadas"})
+        }
+      """
+    )
+  
+    // @LINE:22
+    def updateCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.updateCalzada",
+      """
+        function() {
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/updateCalzada"})
+        }
+      """
+    )
+  
+    // @LINE:23
+    def deleteCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CalzadaController.deleteCalzada",
+      """
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/deleteCalzada/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+  }
+
   // @LINE:14
   class ReverseSegmentoController(_prefix: => String) {
 
@@ -120,40 +170,50 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
-  class ReverseCalzadaController(_prefix: => String) {
+  // @LINE:26
+  class ReverseBordilloController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
-    def addCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CalzadaController.addCalzada",
+    // @LINE:26
+    def addBordillo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.BordilloController.addBordillo",
       """
         function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/add"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "bordillo/add"})
         }
       """
     )
   
-    // @LINE:21
-    def getCalzadas: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CalzadaController.getCalzadas",
+    // @LINE:27
+    def getBordillos: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.BordilloController.getBordillos",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/getCalzadas"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "bordillo/getBordillos"})
         }
       """
     )
   
-    // @LINE:22
-    def updateCalzada: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CalzadaController.updateCalzada",
+    // @LINE:28
+    def updateBordillo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.BordilloController.updateBordillo",
       """
         function() {
-          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "calzada/updateCalzada"})
+          return _wA({method:"PUT", url:"""" + _prefix + { _defaultPrefix } + """" + "bordillo/updateBordillo"})
+        }
+      """
+    )
+  
+    // @LINE:29
+    def deleteBordillo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.BordilloController.deleteBordillo",
+      """
+        function(id0) {
+          return _wA({method:"DELETE", url:"""" + _prefix + { _defaultPrefix } + """" + "bordillo/deleteBordillo/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[String]].javascriptUnbind + """)("id", id0))})
         }
       """
     )

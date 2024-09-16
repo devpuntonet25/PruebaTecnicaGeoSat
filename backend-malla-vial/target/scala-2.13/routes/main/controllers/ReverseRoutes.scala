@@ -52,6 +52,39 @@ package controllers {
   
   }
 
+  // @LINE:20
+  class ReverseCalzadaController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:20
+    def addCalzada(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "calzada/add")
+    }
+  
+    // @LINE:21
+    def getCalzadas(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "calzada/getCalzadas")
+    }
+  
+    // @LINE:22
+    def updateCalzada(): Call = {
+      
+      Call("PUT", _prefix + { _defaultPrefix } + "calzada/updateCalzada")
+    }
+  
+    // @LINE:23
+    def deleteCalzada(id:String): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "calzada/deleteCalzada/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
+    }
+  
+  }
+
   // @LINE:14
   class ReverseSegmentoController(_prefix: => String) {
     def _defaultPrefix: String = {
@@ -85,29 +118,35 @@ package controllers {
   
   }
 
-  // @LINE:20
-  class ReverseCalzadaController(_prefix: => String) {
+  // @LINE:26
+  class ReverseBordilloController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
-    def addCalzada(): Call = {
+    // @LINE:26
+    def addBordillo(): Call = {
       
-      Call("POST", _prefix + { _defaultPrefix } + "calzada/add")
+      Call("POST", _prefix + { _defaultPrefix } + "bordillo/add")
     }
   
-    // @LINE:21
-    def getCalzadas(): Call = {
+    // @LINE:27
+    def getBordillos(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "calzada/getCalzadas")
+      Call("GET", _prefix + { _defaultPrefix } + "bordillo/getBordillos")
     }
   
-    // @LINE:22
-    def updateCalzada(): Call = {
+    // @LINE:28
+    def updateBordillo(): Call = {
       
-      Call("PUT", _prefix + { _defaultPrefix } + "calzada/updateCalzada")
+      Call("PUT", _prefix + { _defaultPrefix } + "bordillo/updateBordillo")
+    }
+  
+    // @LINE:29
+    def deleteBordillo(id:String): Call = {
+      
+      Call("DELETE", _prefix + { _defaultPrefix } + "bordillo/deleteBordillo/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[String]].unbind("id", id)))
     }
   
   }

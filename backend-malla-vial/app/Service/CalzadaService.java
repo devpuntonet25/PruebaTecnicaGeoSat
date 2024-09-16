@@ -42,6 +42,11 @@ public class CalzadaService implements CalzadaRepository {
         return supplyAsync(() -> wrap(em -> updateCalzada(em, calzada)), executionContext);
     }
 
+    @Override
+    public CompletionStage<Calzada> delete(Long id) {
+        return supplyAsync(() -> wrap(em -> deleteCalzada(em, id)), executionContext);
+    }
+
     private <T> T wrap(Function<EntityManager, T> function) {
         return jpaApi.withTransaction(function);
     }
@@ -63,6 +68,16 @@ public class CalzadaService implements CalzadaRepository {
             calzadaExistente.setSegmento(calzada.getSegmento());
 
            return em.merge(calzadaExistente);
+        } else {
+            return null;
+        }
+    }
+
+    private Calzada deleteCalzada(EntityManager em, Long id) {
+        Calzada calzadaExistente = em.find(Calzada.class ,id);
+        if(calzadaExistente != null) {
+            em.remove(calzadaExistente);
+            return calzadaExistente;
         } else {
             return null;
         }
